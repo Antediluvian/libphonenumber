@@ -5379,15 +5379,29 @@
           <leadingDigits>950</leadingDigits>
           <format>$1 $2</format>
         </numberFormat>
+        <!-- 物联网号 -->
+        <numberFormat pattern="(10649)(\d{4})(\d{4})">
+          <leadingDigits>10649</leadingDigits>
+          <format>$1 $2 $3</format>
+        </numberFormat>
       </availableFormats>
       <generalDesc>
         <nationalNumberPattern>
           [1-7]\d{6,11}|
           8[0-357-9]\d{6,9}|
-          9\d{7,10}
+          9\d{7,10}|
+          10649\d{8}
         </nationalNumberPattern>
-        <possibleNumberPattern>\d{4,12}</possibleNumberPattern>
+        <possibleNumberPattern>\d{4,13}</possibleNumberPattern>
       </generalDesc>
+      <personalNumber>
+        <nationalNumberPattern>
+          10649\d{8}
+        </nationalNumberPattern>
+        <possibleNumberPattern>\d{13}</possibleNumberPattern>
+        <possibleLengths national="13"/>
+        <exampleNumber>1064915502911</exampleNumber>
+      </personalNumber>
       <noInternationalDialling>
         <nationalNumberPattern>
           (?:
@@ -5528,10 +5542,11 @@
       <mobile>
         <!-- 170, 176 and 177 prefixes are introduced in early 2014 for 4G networks.
              171 and 175 are valid mobile ranges as per online evidence. -->
+        <!-- add 149 for 物联网号 -->
         <nationalNumberPattern>
           1(?:
             [38]\d|
-            4[57]|
+            4[579]|
             5[0-35-9]|
             7[0-35-8]
           )\d{8}
