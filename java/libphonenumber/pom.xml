@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.googlecode.libphonenumber</groupId>
   <artifactId>libphonenumber</artifactId>
-  <version>8.4.2-CTSI-SNAPSHOT</version>
+  <version>8.4.3-CTSI-SNAPSHOT</version>
   <packaging>jar</packaging>
   <url>https://github.com/googlei18n/libphonenumber/</url>
 
   <parent>
     <groupId>com.googlecode.libphonenumber</groupId>
     <artifactId>libphonenumber-parent</artifactId>
-    <version>8.4.2-SNAPSHOT</version>
+    <version>8.4.3-CTSI-SNAPSHOT</version>
   </parent>
 
   <build>
@@ -91,18 +91,5 @@
       </plugin>
     </plugins>
   </build>
-
-  <distributionManagement>
-    <repository>
-      <id>nexus-releases</id>
-      <name>nexus distribution releases repository</name>
-      <url>http://repo1.sufor.cc/repository/releases/</url>
-    </repository>
-    <snapshotRepository>
-      <id>nexus-snapshots</id>
-      <name>nexus distribution snapshot repository</name>
-      <url>http://repo1.sufor.cc/repository/snapshots/</url>
-    </snapshotRepository>
-  </distributionManagement>
 
 </project>
