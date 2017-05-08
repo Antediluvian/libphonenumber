@@ -24,6 +24,7 @@ the guidelines [here](CONTRIBUTING.md) first.
   * ` findNumbers ` - finds numbers in text input.
   * ` PhoneNumberOfflineGeocoder ` - provides geographical information related to a phone number.
   * ` PhoneNumberToCarrierMapper ` - provides carrier information related to a phone number.
+  * ` PhoneNumberToTimeZonesMapper ` - provides timezone information related to a phone number.
 
 # Demo (v8.4.2)
 [Java](http://libphonenumber.appspot.com/)
@@ -66,8 +67,8 @@ e.g. 7.7.3 to 7.7.4.
 Sometimes we make internal changes to the code or metadata that, while not
 affecting compatibility for clients, could affect compatibility for **porters**
 of the library. For such changes we make announcements to
-[libphonenumber-discuss]
-(http://groups.google.com/forum/#!forum/libphonenumber-discuss). Such changes
+[libphonenumber-discuss](
+http://groups.google.com/forum/#!forum/libphonenumber-discuss). Such changes
 are not reflected in the version number, and we would publish a sub-minor
 release if there were no other changes.
 
@@ -170,7 +171,11 @@ libphonenumber project. We do not evaluate their quality or influence their
 maintenance processes.
 
 *   C#: https://github.com/aidanbebbington/libphonenumber-csharp
-*   Javascript (stripped-down version): https://github.com/halt-hammerzeit/libphonenumber-js
+*   Javascript: If you don't want to use our version, which depends on Closure,
+    there are several other options, including
+    https://github.com/halt-hammerzeit/libphonenumber-js (a stripped-down
+    version) and https://github.com/seegno/google-libphonenumber (installable
+    via npm, a browserify-compatible wrapper)
 *   Objective-c: https://github.com/iziz/libPhoneNumber-iOS
 *   PHP: https://github.com/giggsey/libphonenumber-for-php
 *   PostgreSQL in-database types: https://github.com/blm768/pg-libphonenumber

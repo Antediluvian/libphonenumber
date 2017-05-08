@@ -21,6 +21,7 @@ import com.google.i18n.phonenumbers.Phonemetadata.PhoneMetadata;
 import com.google.i18n.phonenumbers.Phonemetadata.PhoneNumberDesc;
 import com.google.i18n.phonenumbers.Phonenumber.PhoneNumber;
 import com.google.i18n.phonenumbers.Phonenumber.PhoneNumber.CountryCodeSource;
+import com.google.i18n.phonenumbers.internal.RegexCache;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -2189,7 +2190,7 @@ public class PhoneNumberUtil {
 
     boolean isFixedLine = isNumberMatchingDesc(nationalNumber, metadata.getFixedLine());
     if (isFixedLine) {
-      if (metadata.isSameMobileAndFixedLinePattern()) {
+      if (metadata.getSameMobileAndFixedLinePattern()) {
         return PhoneNumberType.FIXED_LINE_OR_MOBILE;
       } else if (isNumberMatchingDesc(nationalNumber, metadata.getMobile())) {
         return PhoneNumberType.FIXED_LINE_OR_MOBILE;
@@ -2198,7 +2199,7 @@ public class PhoneNumberUtil {
     }
     // Otherwise, test to see if the number is mobile. Only do this if certain that the patterns for
     // mobile and fixed line aren't the same.
-    if (!metadata.isSameMobileAndFixedLinePattern()
+    if (!metadata.getSameMobileAndFixedLinePattern()
         && isNumberMatchingDesc(nationalNumber, metadata.getMobile())) {
       return PhoneNumberType.MOBILE;
     }
